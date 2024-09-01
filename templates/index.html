@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1 id="counter">0</h1>
+
+    <button class="btn" onclick="main()">Click ME</button>
+
+    <form action="{{ url_for('handle_click_index') }}" method="POST">
+        <button type="submit">RESTART</button>
+    </form>
+
+    <script>
+        let count = 0;
+        function main(){
+            count++;
+            document.getElementById('counter').innerHTML = count;
+        }
+    </script>
+</body>
+</html>
